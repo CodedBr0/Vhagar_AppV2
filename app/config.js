@@ -1,3 +1,9 @@
+/**
+ * SECURITY WARNING: Only NEXT_PUBLIC_* environment variables are safe to use here
+ * as this config is imported by client-side components. 
+ * NEVER add process.env.DISPLAY_SIGNER_KEY or other sensitive variables here.
+ */
+
 import { PublicKey } from '@solana/web3.js';
 
 export const config = {
@@ -9,4 +15,5 @@ export const config = {
   stakeVault: new PublicKey('DQPsctR9MT5MBgKhPQE8i8faM6CQU7HRtAn8o9fQ7nwG'),
   rewardVault: new PublicKey('DQPsctR9MT5MBgKhPQE8i8faM6CQU7HRtAn8o9fQ7nwG'),
   tokenDecimals: 9,
+  rpcEndpoint: process.env.NEXT_PUBLIC_RPC_ENDPOINT || 'https://api.mainnet-beta.solana.com',
 };
